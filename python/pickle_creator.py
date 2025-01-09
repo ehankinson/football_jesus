@@ -7,9 +7,9 @@ path = f"csv/{year} NFL Team Stats.csv"
 year_stats = {}
 PASSING = { 'cmp': 16, 'p_att': 17, 'p_yds': 20, 'p_td': 21, 'int': 22, 'p_1d': 54 }
 RUSHING = { 'r_att': 34, 'r_yds': 35, 'r_td': 37, 'fum': ( 43, 22 ), 'r_1d': 53 }
-PRESSURE = { 'sk': 26, 'p_yds': 27 }
+PRESSURE = { 'sk': 26, 's_yds': 27 }
 CONVERSIONS = { '3da': 56, '3dc': 57, '4da': 59, '4dc': 60 }
-PENALTIES = { 'pen': 46, 'yds': 47, 'p_1d': 55 }
+PENALTIES = { 'pen': 46, 'yds': 47, 'pen_1d': 55 }
 SCORING = { 't_td': 62, 'xpa': 63, 'xpm': 64, 'fga': 65, 'fgm': 66, '2pa': 67, '2pm': 68, 'sfty': 69, 'krtd': 70, 'prtd': 71, 'inttd': 72, 'frtd': 73, 'otd': 74 }
 
 KEYS = {
