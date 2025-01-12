@@ -1,7 +1,7 @@
 import csv
 import pickle
 
-year = 2024
+year = 2023
 path = f"csv/{year} NFL Team Stats.csv"
 
 year_stats = {}
