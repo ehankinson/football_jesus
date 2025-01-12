@@ -1,10 +1,9 @@
 import csv
 import pickle
 
-year = 2023
-path = f"csv/{year} NFL Team Stats.csv"
+start_year = 1980
+end_year = 2024
 
-year_stats = {}
 PASSING = { 'cmp': 16, 'p_att': 17, 'p_yds': 20, 'p_td': 21, 'int': 22, 'p_1d': 54 }
 RUSHING = { 'r_att': 34, 'r_yds': 35, 'r_td': 37, 'fum': ( 43, 22 ), 'r_1d': 53 }
 PRESSURE = { 'sk': 26, 's_yds': 27 }
@@ -21,35 +20,40 @@ KEYS = {
     'scoring': SCORING
 }
 
- 
-with open(path, 'r') as f:
-    reader = csv.reader(f)
 
-    for row in reader:
-        
-        if row[1] == "Team":
-            continue
-        
-        team = row[1]
-        if team not in year_stats:
-            year_stats[team] = {}
-        
-        week = row[12]
-        opponent = row[14]
-        if week not in year_stats[team]:
-            year_stats[team][week] = {}
-            year_stats[team][week]['opp'] = opponent
+for year in range(start_year, end_year + 1):
+    path = f"csv/{year} NFL Team Stats.csv"
 
-        for key in KEYS:
-            year_stats[team][week][key] = {}
+    year_stats = {}
+    
+    with open(path, 'r') as f:
+        reader = csv.reader(f)
 
-            for stat, value in KEYS[key].items():
+        for row in reader:
+            
+            if row[1] == "Team" or row[1] == '':
+                continue
+            
+            team = row[1]
+            if team not in year_stats:
+                year_stats[team] = {}
+            
+            week = row[12]
+            opponent = row[14]
+            if week not in year_stats[team]:
+                year_stats[team][week] = {}
+                year_stats[team][week]['opp'] = opponent
 
-                if isinstance(value, tuple):
-                    year_stats[team][week][key][stat] = int(row[value[0]]) - int(row[value[1]])
-                else:
-                    year_stats[team][week][key][stat] = int(row[value])
+            for key in KEYS:
+                year_stats[team][week][key] = {}
+
+                for stat, value in KEYS[key].items():
+
+                    if isinstance(value, tuple):
+                        year_stats[team][week][key][stat] = int(row[value[0]]) - int(row[value[1]])
+                    else:
+                        year_stats[team][week][key][stat] = int(row[value]) if row[value] != '' else 0
 
 
-with open(f"pickle/{year} NFL Team Stats.pkl", "wb") as pkl:
-    pickle.dump(year_stats, pkl)
+    with open(f"pickle/{year} NFL Team Stats.pkl", "wb") as pkl:
+        pickle.dump(year_stats, pkl)

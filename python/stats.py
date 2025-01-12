@@ -1,6 +1,8 @@
 import pickle
 
-from python.
+from display import Display
+from special import score, _passing_pct, _rushing_pct, _pressure_pct, _conversions_pct, _pass_fantasy_points, _run_fantasy_points, _pressure_fantasy_points, _conversions_fantasy_points, _penalties_fantasy_pints
+
 
 
 class Stats:
@@ -20,23 +22,23 @@ class Stats:
     def apply_pct(self, stats: dict[str, int], stat_type: set[str]) -> None:
         for stat in stat_type:
             if stat == 'passing':
-                self._passing_pct(stats)
+                _passing_pct(stats)
             elif stat == 'rushing':
-                self._rushing_pct(stats)
+                _rushing_pct(stats)
             elif stat == 'pressure':
-                self._pressure_pct(stats)
-            else:
-                self._conversions_pct(stats)
+                _pressure_pct(stats)
+            elif stat == 'conversions':
+                _conversions_pct(stats)
 
 
 
     def fantasy_points(self, stats: dict[str, int], stat_type: set[str]) -> None:
         stat_functions = {
-            'passing': ('pass', self._pass_fantasy_points),
-            'rushing': ('rush', self._run_fantasy_points),
-            'pressure': ('pres', self._pressure_fantasy_points),
-            'conversions': ('conv', self._conversions_fantasy_points),
-            'penalties': ('pen_p', self._penalties_fantasy_pints)
+            'passing': ('pass', _pass_fantasy_points),
+            'rushing': ('rush', _run_fantasy_points),
+            'pressure': ('pres', _pressure_fantasy_points),
+            'conversions': ('conv', _conversions_fantasy_points),
+            'penalties': ('pen_p', _penalties_fantasy_pints)
         }
 
         total = 0
@@ -73,8 +75,8 @@ class Stats:
                     continue
                 
                 opp = self.year_stats[team][week]['opp']
-                off_pts = self.score(self.year_stats[team][week]['scoring'])
-                def_pts = self.score(self.year_stats[opp][week]['scoring'])
+                off_pts = score(self.year_stats[team][week]['scoring'])
+                def_pts = score(self.year_stats[opp][week]['scoring'])
 
                 if off_pts > def_pts:
                     wins += 1
@@ -161,14 +163,14 @@ class Stats:
             for side in returned_stats[team]:
                 self.apply_pct(returned_stats[team][side], stat_type)
                 self.fantasy_points(returned_stats[team][side], stat_type)
-                returned_stats[team][side]['pts'] = self.score(returned_stats[team][side])
+                returned_stats[team][side]['pts'] = score(returned_stats[team][side])
                 self.simple_team_rating(returned_stats[team][side], side)
 
 
 
     def grab_stats(self, teams: list[str] = None, side_of_the_ball: str = None, stat_type: set[str] = None, start_week: int = None, end_week: int = None, custom_range: set[int] = None, apply_extra: bool = True) -> dict[str, dict[str, int]]:
         teams = teams if teams is not None else list(self.year_stats.keys())
-        stat_type = stat_type if stat_type is not None else self.year_stats[teams[0]]['1'].keys()
+        stat_type = stat_type if stat_type is not None else self.year_stats[teams[0]]['2'].keys()
         returned_stats = {}
 
         for team in teams:
@@ -209,12 +211,12 @@ class Stats:
 
 if __name__ == "__main__":
     end_year = 2024
-    start_year = 2023
+    start_year = 1980
     teams = None
     side_of_the_ball = None
-    stat_type = None
-    start_week = None
-    end_week = None
+    stat_type = { 'passing', 'rushing', 'pressure', 'scoring'}
+    start_week = 1
+    end_week = 22
     custom_range = None
     total_stats = {}
 
@@ -229,7 +231,7 @@ if __name__ == "__main__":
     for year in total_stats:
         big_list = big_list + view.create_team_rankings(total_stats[year], side_of_the_ball, year)
 
-    
+    big_list.sort(key=lambda x: x[6])
     view.display_team_rankings(big_list)
     # off_rankings = stats.display_side_of_the_ball_rankings(returned_stats, 'defense')
 

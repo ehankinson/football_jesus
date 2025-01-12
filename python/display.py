@@ -1,5 +1,6 @@
 import pandas as pd
 
+from special import *
 from IPython.display import display
 
 
@@ -33,7 +34,8 @@ class Display:
                 final_results.append(curr)
 
             # Sort results by the 3rd element (SORS - SDRS) in descending order
-            return final_results.sort(key=lambda x: x[6], reverse=True)
+            final_results.sort(key=lambda x: x[6], reverse=True)
+            return final_results
     
 
 
@@ -44,7 +46,9 @@ class Display:
                 "PF", "PA"
         ]
         df = pd.DataFrame(final_results, columns=columns)
-        display(df)
+        
+        with pd.option_context('display.max_rows', None):
+            display(df)
 
 
 
