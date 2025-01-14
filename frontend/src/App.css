@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin: 0 0 40px 0;
+  font-size: 2.5rem;
+}
+
+.team-selection {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+}
+
+.team-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-selector h2 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.team-dropdown {
+  width: 200px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+.team-dropdown:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.team-dropdown:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.team-dropdown option {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.vs-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .team-selection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-selector {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .vs-divider {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
+    margin: 10px 0;
+  }
+}
