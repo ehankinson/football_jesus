@@ -55,7 +55,8 @@ class Stats:
 
     def simple_team_rating(self, stats: dict[str, int], side_of_the_ball: str) -> None:
         name = 'sors' if side_of_the_ball == 'offense' else 'sdrs'
-        stats[name] = ( ( stats['pts'] + stats['fantasy_points'] ) / 2 ) / stats['gp']
+        gp = stats['gp'] if 'gp' in stats else 1
+        stats[name] = ( ( stats['pts'] + stats['fantasy_points'] ) / 2 ) / gp
 
 
 
@@ -104,24 +105,24 @@ class Stats:
 
 
 
-    def _which_stats(self, team: str, week: int, side_of_the_ball: str, stats: dict) -> list[str]:
+    def _which_stats(self, team: str, week: int, side_of_the_ball: str, stats: dict, per_week = False) -> list[str]:
         if side_of_the_ball is None:
             look_at = [team, self.year_stats[team][week]['opp']]
 
-            if 'offense' not in stats[team]:
-                stats[team]['offense'] = {} 
-                stats[team]['defense'] = {}
+            if not per_week and 'offense' not in stats[team]:
+                    stats[team]['offense'] = {} 
+                    stats[team]['defense'] = {}
 
         elif side_of_the_ball == 'offense':
             look_at = [team]
 
-            if 'offense' not in stats[team]:
+            if not per_week and 'offense' not in stats[team]:
                 stats[team]['offense'] = {}
 
         else:
             look_at = [self.year_stats[team][week]['opp']]
 
-            if 'defense' not in stats[team]:
+            if not per_week and 'defense' not in stats[team]:
                 stats[team]['defense'] = {}
         
         return look_at
@@ -158,14 +159,23 @@ class Stats:
 
 
 
-    def _apply_special_stats(self, returned_stats: dict, stat_type: set[str]) -> None:
-        for team in returned_stats:
-            for side in returned_stats[team]:
-                self.apply_pct(returned_stats[team][side], stat_type)
-                self.fantasy_points(returned_stats[team][side], stat_type)
-                returned_stats[team][side]['pts'] = score(returned_stats[team][side])
-                self.simple_team_rating(returned_stats[team][side], side)
+    def _process_stats(self, stats, stat_type, side):
+        self.apply_pct(stats, stat_type)
+        self.fantasy_points(stats, stat_type)
+        stats['pts'] = score(stats)
+        self.simple_team_rating(stats, side)
 
+
+        
+    def _apply_special_stats(self, returned_stats: dict, stat_type: set[str], per_week = False) -> None:
+        for team, team_stats in returned_stats.items():
+            if per_week:
+                for week, week_stats in team_stats.items():
+                    for side, stats in week_stats.items():
+                        self._process_stats(stats, stat_type, side)
+            else:
+                for side, stats in team_stats.items():
+                    self._process_stats(stats, stat_type, side)
 
 
     def grab_stats(self, teams: list[str] = None, side_of_the_ball: str = None, stat_type: set[str] = None, start_week: int = None, end_week: int = None, custom_range: set[int] = None, apply_extra: bool = True) -> dict[str, dict[str, int]]:
@@ -206,17 +216,42 @@ class Stats:
             self.add_records(returned_stats.keys(), returned_stats, start_week, end_week, custom_range)
 
         return returned_stats
+
+
+
+    def grab_stats_per_week(self, teams: list[str] = None, side_of_the_ball: str = None, stat_type: set[str] = None, start_week: int = None, end_week: int = None, custom_range: set[int] = None, apply_extra: bool = False) -> dict[int, list[int]]:
+        teams = [teams] if teams is not None else list(self.year_stats.keys())
+        stat_type = stat_type if stat_type is not None else self.year_stats[teams[0]]['2'].keys()
+        returned_stats = {}
+        per_week = True
+
+        for team in teams:
+            if start_week is not None:
+                max_week = max(list(map(int, self.year_stats[team].keys())))
+                if start_week > max_week:
+                    continue
+            
+            returned_stats[team] = {}
+            for week in self.year_stats[team]:
+                
+                if not self._in_week_range(int(week), start_week, end_week,custom_range):
+                    continue
+                
+                look_at = self._which_stats(team, week, side_of_the_ball, returned_stats, per_week)
+
+                returned_stats[team][week] = self._add_stats(team, look_at, week, stat_type)
+        
+        if apply_extra:
+            self._apply_special_stats(returned_stats, stat_type, per_week)
+        
+        return returned_stats
+
     
 
-
-if __name__ == "__main__":
-    end_year = 2024
-    start_year = 1980
+def team_rankins(start_year: int, end_year: int, start_week: int, end_week: int) -> None:
     teams = None
     side_of_the_ball = None
-    stat_type = { 'passing', 'rushing', 'pressure', 'scoring'}
-    start_week = 1
-    end_week = 22
+    stat_type = { 'passing', 'rushing', 'pressure', 'scoring' }
     custom_range = None
     total_stats = {}
 
@@ -231,7 +266,22 @@ if __name__ == "__main__":
     for year in total_stats:
         big_list = big_list + view.create_team_rankings(total_stats[year], side_of_the_ball, year)
 
-    big_list.sort(key=lambda x: x[6])
+    big_list.sort(key=lambda x: x[6], reverse=True)
     view.display_team_rankings(big_list)
-    # off_rankings = stats.display_side_of_the_ball_rankings(returned_stats, 'defense')
+
+
+
+if __name__ == "__main__":
+    year = 2024
+    stat = Stats(2024)
+    teams = None
+    side_of_the_ball = None
+    stat_type = None
+    custom_range = None
+    start_week = None
+    end_week = None
+    b = stat.grab_stats_per_week(teams, side_of_the_ball, stat_type, start_week, end_week, custom_range, False)
+    a = 5
+
+
 

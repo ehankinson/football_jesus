@@ -1,6 +1,6 @@
 import pandas as pd
 
-from special import *
+from special import pct
 from IPython.display import display
 
 
@@ -9,33 +9,29 @@ class Display:
 
     def create_team_rankings(self, stats: dict[str, dict[str, int]], side_of_the_ball: str, year: int) -> pd.DataFrame:
         final_results = []
-        if side_of_the_ball is not None:
-            print("Cannot print this section since not all sides are present")
-            return
-        else:
-            for team in stats:
-                curr = []
-                curr.append(team)  # Team name
-                curr.append(year)  # Year
-                curr.append(stats[team]['record']['wins'])
-                curr.append(stats[team]['record']['losses'])
-                curr.append(stats[team]['record']['ties'])
-                curr.append(pct(stats[team]['record']['wins'], (stats[team]['record']['wins'] + stats[team]['record']['losses'] + stats[team]['record']['ties'])))
-                curr.append(stats[team]['offense']['sors'] - stats[team]['defense']['sdrs'])  # SORS-SDRS
-                curr.append(stats[team]['offense']['sors'])  # Offense SORS
-                curr.append(stats[team]['defense']['sdrs'])  # Defense SDRS
-                curr.append(stats[team]['offense']['fantasy_points'] - stats[team]['defense']['fantasy_points'])  # SORS-SDRS
-                curr.append(stats[team]['offense']['fantasy_points'])  # Offense Fantasy Points
-                curr.append(stats[team]['defense']['fantasy_points'])  # Defense Fantasy Points
-                curr.append(stats[team]['offense']['pts'] - stats[team]['defense']['pts'])  # SORS-SDRS
-                curr.append(stats[team]['offense']['pts'])  # Offense Points
-                curr.append(stats[team]['defense']['pts'])  # Defense Points
+        for team in stats:
+            curr = []
+            curr.append(team)  # Team name
+            curr.append(year)  # Year
+            curr.append(stats[team]['record']['wins'])
+            curr.append(stats[team]['record']['losses'])
+            curr.append(stats[team]['record']['ties'])
+            curr.append(pct(stats[team]['record']['wins'], (stats[team]['record']['wins'] + stats[team]['record']['losses'] + stats[team]['record']['ties'])))
+            curr.append(stats[team]['offense']['sors'] - stats[team]['defense']['sdrs'])  # SORS-SDRS
+            curr.append(stats[team]['offense']['sors'])  # Offense SORS
+            curr.append(stats[team]['defense']['sdrs'])  # Defense SDRS
+            curr.append(stats[team]['offense']['fantasy_points'] - stats[team]['defense']['fantasy_points'])  # SORS-SDRS
+            curr.append(stats[team]['offense']['fantasy_points'])  # Offense Fantasy Points
+            curr.append(stats[team]['defense']['fantasy_points'])  # Defense Fantasy Points
+            curr.append(stats[team]['offense']['pts'] - stats[team]['defense']['pts'])  # SORS-SDRS
+            curr.append(stats[team]['offense']['pts'])  # Offense Points
+            curr.append(stats[team]['defense']['pts'])  # Defense Points
 
-                final_results.append(curr)
+            final_results.append(curr)
 
-            # Sort results by the 3rd element (SORS - SDRS) in descending order
-            final_results.sort(key=lambda x: x[6], reverse=True)
-            return final_results
+        # Sort results by the 3rd element (SORS - SDRS) in descending order
+        final_results.sort(key=lambda x: x[6], reverse=True)
+        return final_results
     
 
 
