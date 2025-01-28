@@ -1,0 +1,194 @@
+{
+  "NWE-2023": {
+    "rating": 895,
+    "wins": 312891,
+    "losses": 617057,
+    "ties": 52
+  },
+  "BUF-2023": {
+    "rating": 1189,
+    "wins": 613670,
+    "losses": 316282,
+    "ties": 48
+  },
+  "MIA-2023": {
+    "rating": 1196,
+    "wins": 565434,
+    "losses": 364494,
+    "ties": 72
+  },
+  "NYJ-2023": {
+    "rating": 996,
+    "wins": 376524,
+    "losses": 553455,
+    "ties": 21
+  },
+  "BAL-2023": {
+    "rating": 1163,
+    "wins": 664987,
+    "losses": 264951,
+    "ties": 62
+  },
+  "PIT-2023": {
+    "rating": 1063,
+    "wins": 422391,
+    "losses": 507513,
+    "ties": 96
+  },
+  "CIN-2023": {
+    "rating": 1014,
+    "wins": 464233,
+    "losses": 465677,
+    "ties": 90
+  },
+  "CLE-2023": {
+    "rating": 1013,
+    "wins": 476345,
+    "losses": 453611,
+    "ties": 44
+  },
+  "IND-2023": {
+    "rating": 918,
+    "wins": 433024,
+    "losses": 496914,
+    "ties": 62
+  },
+  "JAX-2023": {
+    "rating": 997,
+    "wins": 488610,
+    "losses": 441321,
+    "ties": 69
+  },
+  "TEN-2023": {
+    "rating": 872,
+    "wins": 366648,
+    "losses": 563334,
+    "ties": 18
+  },
+  "HOU-2023": {
+    "rating": 1100,
+    "wins": 509383,
+    "losses": 420604,
+    "ties": 13
+  },
+  "KAN-2023": {
+    "rating": 1090,
+    "wins": 564961,
+    "losses": 364904,
+    "ties": 135
+  },
+  "LAC-2023": {
+    "rating": 974,
+    "wins": 443509,
+    "losses": 486418,
+    "ties": 73
+  },
+  "LVR-2023": {
+    "rating": 898,
+    "wins": 439438,
+    "losses": 490480,
+    "ties": 82
+  },
+  "DEN-2023": {
+    "rating": 959,
+    "wins": 437368,
+    "losses": 492560,
+    "ties": 72
+  },
+  "NYG-2023": {
+    "rating": 874,
+    "wins": 328645,
+    "losses": 601322,
+    "ties": 33
+  },
+  "DAL-2023": {
+    "rating": 1130,
+    "wins": 656494,
+    "losses": 273428,
+    "ties": 78
+  },
+  "WAS-2023": {
+    "rating": 793,
+    "wins": 256252,
+    "losses": 673739,
+    "ties": 9
+  },
+  "PHI-2023": {
+    "rating": 1080,
+    "wins": 464728,
+    "losses": 465228,
+    "ties": 44
+  },
+  "GNB-2023": {
+    "rating": 1023,
+    "wins": 498575,
+    "losses": 431313,
+    "ties": 112
+  },
+  "DET-2023": {
+    "rating": 1063,
+    "wins": 550939,
+    "losses": 378974,
+    "ties": 87
+  },
+  "MIN-2023": {
+    "rating": 961,
+    "wins": 446493,
+    "losses": 483433,
+    "ties": 74
+  },
+  "CHI-2023": {
+    "rating": 901,
+    "wins": 446640,
+    "losses": 483265,
+    "ties": 95
+  },
+  "CAR-2023": {
+    "rating": 785,
+    "wins": 261230,
+    "losses": 668741,
+    "ties": 29
+  },
+  "ATL-2023": {
+    "rating": 946,
+    "wins": 433822,
+    "losses": 496155,
+    "ties": 23
+  },
+  "NOR-2023": {
+    "rating": 1064,
+    "wins": 545006,
+    "losses": 384929,
+    "ties": 65
+  },
+  "TAM-2023": {
+    "rating": 1027,
+    "wins": 504594,
+    "losses": 425331,
+    "ties": 75
+  },
+  "SEA-2023": {
+    "rating": 995,
+    "wins": 424717,
+    "losses": 505219,
+    "ties": 64
+  },
+  "LAR-2023": {
+    "rating": 1124,
+    "wins": 523639,
+    "losses": 406317,
+    "ties": 44
+  },
+  "SFO-2023": {
+    "rating": 1097,
+    "wins": 645563,
+    "losses": 284425,
+    "ties": 12
+  },
+  "ARI-2023": {
+    "rating": 800,
+    "wins": 312294,
+    "losses": 617653,
+    "ties": 53
+  }
+}

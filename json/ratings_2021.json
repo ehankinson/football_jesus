@@ -1,0 +1,194 @@
+{
+  "NWE-2021": {
+    "rating": 1094,
+    "wins": 196350,
+    "losses": 113642,
+    "ties": 8
+  },
+  "BUF-2021": {
+    "rating": 1115,
+    "wins": 226528,
+    "losses": 83472,
+    "ties": 0
+  },
+  "MIA-2021": {
+    "rating": 985,
+    "wins": 149337,
+    "losses": 160645,
+    "ties": 18
+  },
+  "NYJ-2021": {
+    "rating": 732,
+    "wins": 81653,
+    "losses": 228341,
+    "ties": 6
+  },
+  "BAL-2021": {
+    "rating": 1039,
+    "wins": 156749,
+    "losses": 153238,
+    "ties": 13
+  },
+  "PIT-2021": {
+    "rating": 957,
+    "wins": 131213,
+    "losses": 178775,
+    "ties": 12
+  },
+  "CIN-2021": {
+    "rating": 1105,
+    "wins": 184504,
+    "losses": 125488,
+    "ties": 8
+  },
+  "CLE-2021": {
+    "rating": 1047,
+    "wins": 153992,
+    "losses": 156004,
+    "ties": 4
+  },
+  "IND-2021": {
+    "rating": 1049,
+    "wins": 185105,
+    "losses": 124886,
+    "ties": 9
+  },
+  "JAX-2021": {
+    "rating": 752,
+    "wins": 72826,
+    "losses": 237172,
+    "ties": 2
+  },
+  "TEN-2021": {
+    "rating": 1011,
+    "wins": 176978,
+    "losses": 133019,
+    "ties": 3
+  },
+  "HOU-2021": {
+    "rating": 832,
+    "wins": 93450,
+    "losses": 216543,
+    "ties": 7
+  },
+  "KAN-2021": {
+    "rating": 1209,
+    "wins": 198483,
+    "losses": 111510,
+    "ties": 7
+  },
+  "LAC-2021": {
+    "rating": 1046,
+    "wins": 165735,
+    "losses": 144251,
+    "ties": 14
+  },
+  "LVR-2021": {
+    "rating": 1081,
+    "wins": 132744,
+    "losses": 177247,
+    "ties": 9
+  },
+  "DEN-2021": {
+    "rating": 1077,
+    "wins": 162691,
+    "losses": 147290,
+    "ties": 19
+  },
+  "NYG-2021": {
+    "rating": 795,
+    "wins": 94728,
+    "losses": 215259,
+    "ties": 13
+  },
+  "DAL-2021": {
+    "rating": 1225,
+    "wins": 201811,
+    "losses": 108175,
+    "ties": 14
+  },
+  "WAS-2021": {
+    "rating": 884,
+    "wins": 118705,
+    "losses": 191282,
+    "ties": 13
+  },
+  "PHI-2021": {
+    "rating": 1142,
+    "wins": 179687,
+    "losses": 130312,
+    "ties": 1
+  },
+  "GNB-2021": {
+    "rating": 937,
+    "wins": 189933,
+    "losses": 120053,
+    "ties": 14
+  },
+  "DET-2021": {
+    "rating": 854,
+    "wins": 107067,
+    "losses": 202928,
+    "ties": 5
+  },
+  "MIN-2021": {
+    "rating": 945,
+    "wins": 156207,
+    "losses": 153783,
+    "ties": 10
+  },
+  "CHI-2021": {
+    "rating": 803,
+    "wins": 122646,
+    "losses": 187340,
+    "ties": 14
+  },
+  "CAR-2021": {
+    "rating": 980,
+    "wins": 116834,
+    "losses": 193163,
+    "ties": 3
+  },
+  "ATL-2021": {
+    "rating": 967,
+    "wins": 102531,
+    "losses": 207460,
+    "ties": 9
+  },
+  "NOR-2021": {
+    "rating": 982,
+    "wins": 171386,
+    "losses": 138613,
+    "ties": 1
+  },
+  "TAM-2021": {
+    "rating": 1119,
+    "wins": 211627,
+    "losses": 98370,
+    "ties": 3
+  },
+  "SEA-2021": {
+    "rating": 918,
+    "wins": 165685,
+    "losses": 144290,
+    "ties": 25
+  },
+  "LAR-2021": {
+    "rating": 1149,
+    "wins": 194384,
+    "losses": 115607,
+    "ties": 9
+  },
+  "SFO-2021": {
+    "rating": 1102,
+    "wins": 177150,
+    "losses": 132823,
+    "ties": 27
+  },
+  "ARI-2021": {
+    "rating": 1067,
+    "wins": 181127,
+    "losses": 128865,
+    "ties": 8
+  }
+}

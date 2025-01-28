@@ -1,0 +1,194 @@
+{
+	"NWE-2024": {
+		"rating": 884,
+		"wins": 100498,
+		"losses": 216312,
+		"ties": 10
+	},
+	"BUF-2024": {
+		"rating": 1236,
+		"wins": 219781,
+		"losses": 97024,
+		"ties": 15
+	},
+	"MIA-2024": {
+		"rating": 1022,
+		"wins": 153865,
+		"losses": 162936,
+		"ties": 19
+	},
+	"NYJ-2024": {
+		"rating": 940,
+		"wins": 130664,
+		"losses": 186150,
+		"ties": 6
+	},
+	"BAL-2024": {
+		"rating": 1347,
+		"wins": 217969,
+		"losses": 98849,
+		"ties": 2
+	},
+	"PIT-2024": {
+		"rating": 1025,
+		"wins": 171404,
+		"losses": 145392,
+		"ties": 24
+	},
+	"CIN-2024": {
+		"rating": 1090,
+		"wins": 178739,
+		"losses": 138071,
+		"ties": 10
+	},
+	"CLE-2024": {
+		"rating": 691,
+		"wins": 75980,
+		"losses": 240836,
+		"ties": 4
+	},
+	"IND-2024": {
+		"rating": 867,
+		"wins": 138415,
+		"losses": 178403,
+		"ties": 2
+	},
+	"JAX-2024": {
+		"rating": 938,
+		"wins": 121841,
+		"losses": 194969,
+		"ties": 10
+	},
+	"TEN-2024": {
+		"rating": 850,
+		"wins": 96314,
+		"losses": 220488,
+		"ties": 18
+	},
+	"HOU-2024": {
+		"rating": 985,
+		"wins": 158424,
+		"losses": 158381,
+		"ties": 15
+	},
+	"KAN-2024": {
+		"rating": 1085,
+		"wins": 189842,
+		"losses": 126964,
+		"ties": 14
+	},
+	"LAC-2024": {
+		"rating": 1040,
+		"wins": 202482,
+		"losses": 114317,
+		"ties": 21
+	},
+	"LVR-2024": {
+		"rating": 871,
+		"wins": 99557,
+		"losses": 217251,
+		"ties": 12
+	},
+	"DEN-2024": {
+		"rating": 1170,
+		"wins": 207398,
+		"losses": 109418,
+		"ties": 4
+	},
+	"NYG-2024": {
+		"rating": 832,
+		"wins": 90580,
+		"losses": 226225,
+		"ties": 15
+	},
+	"DAL-2024": {
+		"rating": 813,
+		"wins": 117364,
+		"losses": 199445,
+		"ties": 11
+	},
+	"WAS-2024": {
+		"rating": 1012,
+		"wins": 190797,
+		"losses": 126021,
+		"ties": 2
+	},
+	"PHI-2024": {
+		"rating": 1202,
+		"wins": 218578,
+		"losses": 98234,
+		"ties": 8
+	},
+	"GNB-2024": {
+		"rating": 1021,
+		"wins": 202381,
+		"losses": 114425,
+		"ties": 14
+	},
+	"DET-2024": {
+		"rating": 1148,
+		"wins": 232020,
+		"losses": 84792,
+		"ties": 8
+	},
+	"MIN-2024": {
+		"rating": 1094,
+		"wins": 198575,
+		"losses": 118242,
+		"ties": 3
+	},
+	"CHI-2024": {
+		"rating": 1102,
+		"wins": 135968,
+		"losses": 180846,
+		"ties": 6
+	},
+	"CAR-2024": {
+		"rating": 777,
+		"wins": 83369,
+		"losses": 233451,
+		"ties": 0
+	},
+	"ATL-2024": {
+		"rating": 984,
+		"wins": 153705,
+		"losses": 163110,
+		"ties": 5
+	},
+	"NOR-2024": {
+		"rating": 907,
+		"wins": 134340,
+		"losses": 182466,
+		"ties": 14
+	},
+	"TAM-2024": {
+		"rating": 1099,
+		"wins": 206804,
+		"losses": 110004,
+		"ties": 12
+	},
+	"SEA-2024": {
+		"rating": 1115,
+		"wins": 167087,
+		"losses": 149714,
+		"ties": 19
+	},
+	"LAR-2024": {
+		"rating": 854,
+		"wins": 153534,
+		"losses": 163265,
+		"ties": 21
+	},
+	"SFO-2024": {
+		"rating": 1025,
+		"wins": 148494,
+		"losses": 168317,
+		"ties": 9
+	},
+	"ARI-2024": {
+		"rating": 974,
+		"wins": 172182,
+		"losses": 144633,
+		"ties": 5
+	}
+}

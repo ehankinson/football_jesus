@@ -221,6 +221,9 @@ class Stats:
 
     def grab_stats_per_week(self, teams: list[str] = None, side_of_the_ball: str = None, stat_type: set[str] = None, start_week: int = None, end_week: int = None, custom_range: set[int] = None, apply_extra: bool = False) -> dict[int, list[int]]:
         teams = [teams] if teams is not None else list(self.year_stats.keys())
+        if len(teams[0]) > 3:
+            teams[0] = teams[0][:3]
+
         stat_type = stat_type if stat_type is not None else self.year_stats[teams[0]]['2'].keys()
         returned_stats = {}
         per_week = True
@@ -273,15 +276,4 @@ def team_rankins(start_year: int, end_year: int, start_week: int, end_week: int)
 
 if __name__ == "__main__":
     year = 2024
-    stat = Stats(2024)
-    teams = None
-    side_of_the_ball = None
-    stat_type = None
-    custom_range = None
-    start_week = None
-    end_week = None
-    b = stat.grab_stats_per_week(teams, side_of_the_ball, stat_type, start_week, end_week, custom_range, False)
-    a = 5
-
-
-
+    team_rankins(2021, 2024, 1, 22)
